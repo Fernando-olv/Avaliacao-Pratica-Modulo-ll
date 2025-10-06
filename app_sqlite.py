@@ -12,3 +12,24 @@ O que o script deve fazer:
 7) Deletar registros
 
 """
+import sqlite3
+conexao = sqlite3.connect("./escola.db")
+
+conexao.execute("CREATE TABLE if not exists alunos (id INTEGER PRIMARY KEY,nome TEXT, idade INTEGER, email TEXT)")
+conexao.execute("INSERT INTO alunos(nome,idade,email) values ('cleberiano', 23, 'cleberbleberudo@gmail.com')")
+conexao.commit()
+ad = conexao.execute("SELECT * FROM alunos").fetchall()
+
+print (ad)
+
+dude = conexao.execute("SELECT * FROM alunos WHERE id= 1 ").fetchall()
+
+print(dude)
+conexao.execute("UPDATE alunos SET nome = 'jhon doe' WHERE id=1")
+conexao.commit()
+dude = conexao.execute("SELECT * FROM alunos WHERE id=1 ").fetchall()
+
+print(dude)
+
+conexao.execute("DELETE FROM alunos WHERE id=1 ")
+conexao.commit()
