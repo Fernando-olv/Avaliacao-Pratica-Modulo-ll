@@ -88,14 +88,14 @@ O script deve implementar as operações **CRUD** na tabela `alunos`.
 ### 📌 Checklist
 
 #### 1) Criar banco de dados  
-- [ ] Criou o banco `escola.db` usando `sqlite3.connect()`.  
-- [ ] Conexão e cursor foram criados corretamente.  
+- [X] Criou o banco `escola.db` usando `sqlite3.connect()`.  
+- [X] Conexão e cursor foram criados corretamente.  
 
 #### 2) Criar tabela `alunos`  
-- [ ] Usou `CREATE TABLE`
-- [ ] Seguiu o diagrama especificado (`id`, `nome`, `idade`, `email`).  
-- [ ] Definiu `id` como **PRIMARY KEY**.  
-- [ ] Respeitou os tipos corretos (TEXT, INTEGER, etc.).  
+- [ X ] Usou `CREATE TABLE`
+- [ X ] Seguiu o diagrama especificado (`id`, `nome`, `idade`, `email`).  
+- [ X ] Definiu `id` como **PRIMARY KEY**.  
+- [ X ] Respeitou os tipos corretos (TEXT, INTEGER, etc.).  
 
 #### 3) Inserir registros  
 - [ ] Usou `INSERT INTO alunos (...) VALUES (?, ?, ?)` com parâmetros.  
