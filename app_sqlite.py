@@ -12,3 +12,8 @@ O que o script deve fazer:
 7) Deletar registros
 
 """
+import sqlite3
+
+conexao = sqlite3.connect("./escola.db")
+
+conexao.execute("CREATE TABLE alunos (id INTEGER PRIMARY KEY,nome TEXT,idade)")
