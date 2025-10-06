@@ -1,0 +1,20 @@
+from flask import Flask, request
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Olá, Flask'
+
+@app.route('/soma', methods=['GET'])
+def soma():
+    valor1 = request.args.get(key='v1', default=None, type=float)
+    valor2 = request.args.get(key='v2', default=None, type=float)
+
+    if valor1 and valor2:
+        return f'soma = {valor1 + valor2}'
+    
+
+    return 'Aguardando números v1 e v2 na URL'
+
+if __name__ == '__main__':
+    app.run(debug=True)
