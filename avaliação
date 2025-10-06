@@ -1,0 +1,57 @@
+from flask import Flask, request
+app = Flask(__name__)
+
+@app.route('/')
+def ola():
+    return "Olá alunos"
+
+@app.route('/soma', methods=["GET"])
+def soma():
+    Valor1 = request.args.get(key="v1", default=None, type=float)
+    Valor2 = request.args.get(key="v2",default=None,type=float)
+    soma = Valor1 + Valor2
+    
+    if Valor1 and Valor2:
+        return f"Soma = {soma}"
+
+    return " aguardando números v1 e v2 na URL"
+   
+
+@app.route('/subtrair', methods=["GET"])
+def subtrair():
+    Valor1 = request.args.get(key="v1", default=None, type=float)
+    Valor2 = request.args.get(key="v2",default=None,type=float)
+    soma = Valor1 + Valor2
+    
+    if Valor1 and Valor2:
+        return f"subtrair = {Valor1 - Valor2}"
+
+    return " aguardando números v1 e v2 na URL"
+    
+
+
+@app.route('/multiplicar', methods=["GET"])
+def multiplicar():
+    Valor1 = request.args.get(key="v1", default=None, type=float)
+    Valor2 = request.args.get(key="v2",default=None,type=float)
+    soma = Valor1 + Valor2
+    
+    if Valor1 and Valor2:
+        return f"multiplicar = {Valor1 * Valor2}"
+
+    return " aguardando números v1 e v2 na URL"
+   
+
+@app.route('/dividir', methods=["GET"])
+def dividir():
+    Valor1 = request.args.get(key="v1", default=None, type=float)
+    Valor2 = request.args.get(key="v2",default=None,type=float)
+    soma = Valor1 + Valor2
+    
+    if Valor1 and Valor2:
+        return f"dividir = {Valor1 / Valor2}"
+
+    return " aguardando números v1 e v2 na URL"
+    
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",debug=True)
